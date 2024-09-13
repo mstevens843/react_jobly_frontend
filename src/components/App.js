@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";  // Update this line
-import { decode as jwt_decode } from "jwt-decode";
+import jwt_decode from "jwt-decode";
 import Home from "./Home";
 import Companies from "./Companies";
 import CompanyDetail from "./CompanyDetail";
