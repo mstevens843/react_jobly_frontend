@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";  // Update this line
-import jwt_decode from "jwt-decode";
+import jwtDecode from "jwt-decode";
 import Home from "./Home";
 import Companies from "./Companies";
 import CompanyDetail from "./CompanyDetail";
@@ -37,7 +37,7 @@ function App() {
   // Fetch user data when token changes (on login/signup)
   useEffect(() => {
     if (token) {
-      const { username } = jwt_decode(token);
+      const { username } = jwtDecode(token);
       api.token = token;
       async function fetchUser() {
         try {
