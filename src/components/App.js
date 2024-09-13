@@ -10,8 +10,7 @@ import SignUp from "./SignUp";
 import Profile from "./Profile";
 import Navbar from "./NavBar";
 import NotFound from "./NotFound";
-import api from '../../api'; // Goes up two levels from the components directory
-
+import api from '../api/api'; // Adjust the path based on the actual location within src/
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
