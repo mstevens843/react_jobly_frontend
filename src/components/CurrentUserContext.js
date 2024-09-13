@@ -1,6 +1,6 @@
 // CurrentUserContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import api from './api'; // Assuming api.js contains the API methods
+import api from '../api/api';; // Assuming api.js contains the API methods
 import jwt_decode from 'jwt-decode';
 
 // Create a context for currentUser

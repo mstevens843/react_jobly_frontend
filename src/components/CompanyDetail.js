@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; 
-import JoblyApi from '../api';
-
+import JoblyApi from '../api/api';
 
 // CompanyDetail component that shows details for a specific company, inclding jobs available at specific company.
 // This component is accessed when company is clicked on in the companies list.  It uses the 'handle' from the URL to make an API 

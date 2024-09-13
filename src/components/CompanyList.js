@@ -1,7 +1,7 @@
 // CompanyList.js
 
 import React, { useState, useEffect } from 'react';
-import JoblyApi from '../api';
+import JoblyApi from '../api/api';
 import { Link } from 'react-router-dom';
 
 /**
