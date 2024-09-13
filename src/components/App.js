@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";  // Update this line
 import jwtDecode from "jwt-decode";
 import Home from "./Home";
 import Companies from "./Companies";
@@ -10,7 +10,7 @@ import SignUp from "./SignUp";
 import Profile from "./Profile";
 import Navbar from "./NavBar";
 import NotFound from "./NotFound";
-import api from '../api/api'; // Adjust the path based on the actual location within src/
+import api from "../api/api";  // Correct import
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -66,30 +66,24 @@ function App() {
     <Router>
       <Navbar currentUser={currentUser} logout={logout} />
       <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/companies" component={Companies} />
-          <Route path="/companies/:handle" component={CompanyDetail} />
-          <Route path="/jobs" component={Jobs} />
+        <Routes>  {/* Replace Switch with Routes */}
+          <Route exact path="/" element={<Home />} /> {/* Use element instead of component */}
+          <Route exact path="/companies" element={<Companies />} />
+          <Route path="/companies/:handle" element={<CompanyDetail />} />
+          <Route path="/jobs" element={<Jobs />} />
 
           {/* Login Route */}
-          <Route path="/login">
-            <Login login={login} />
-          </Route>
+          <Route path="/login" element={<Login login={login} />} />
 
           {/* SignUp Route */}
-          <Route path="/signup">
-            <SignUp signup={signup} />
-          </Route>
+          <Route path="/signup" element={<SignUp signup={signup} />} />
 
           {/* Profile Route with currentUser and updateUser */}
-          <Route path="/profile">
-            <Profile currentUser={currentUser} updateUser={updateUser} />
-          </Route>
+          <Route path="/profile" element={<Profile currentUser={currentUser} updateUser={updateUser} />} />
 
           {/* Not Found Route */}
-          <Route component={NotFound} />
-        </Switch>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
     </Router>
   );
