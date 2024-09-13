@@ -10,7 +10,8 @@ import SignUp from "./SignUp";
 import Profile from "./Profile";
 import Navbar from "./NavBar";
 import NotFound from "./NotFound";
-import api from "./api"; // Your API helper (JoblyApi)
+import api from '../../api'; // Goes up two levels from the components directory
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
